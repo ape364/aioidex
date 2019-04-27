@@ -1,0 +1,149 @@
+[[package]]
+category = "dev"
+description = "Enhance the standard unittest package with features for testing asyncio libraries"
+name = "asynctest"
+optional = false
+python-versions = ">=3.4"
+version = "0.12.4"
+
+[[package]]
+category = "dev"
+description = "Atomic file writes."
+name = "atomicwrites"
+optional = false
+python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*"
+version = "1.3.0"
+
+[[package]]
+category = "dev"
+description = "Classes Without Boilerplate"
+name = "attrs"
+optional = false
+python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*"
+version = "19.1.0"
+
+[[package]]
+category = "main"
+description = "Function decoration for backoff and retry"
+name = "backoff"
+optional = false
+python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*"
+version = "1.8.0"
+
+[[package]]
+category = "dev"
+description = "Cross-platform colored terminal text."
+marker = "sys_platform == \"win32\""
+name = "colorama"
+optional = false
+python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*"
+version = "0.4.1"
+
+[[package]]
+category = "dev"
+description = "More routines for operating on iterables, beyond itertools"
+marker = "python_version > \"2.7\""
+name = "more-itertools"
+optional = false
+python-versions = ">=3.4"
+version = "7.0.0"
+
+[[package]]
+category = "dev"
+description = "plugin and hook calling mechanisms for python"
+name = "pluggy"
+optional = false
+python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*"
+version = "0.9.0"
+
+[[package]]
+category = "dev"
+description = "library with cross-python path, ini-parsing, io, code, log facilities"
+name = "py"
+optional = false
+python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*"
+version = "1.8.0"
+
+[[package]]
+category = "dev"
+description = "pytest: simple powerful testing with Python"
+name = "pytest"
+optional = false
+python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*"
+version = "4.4.1"
+
+[package.dependencies]
+atomicwrites = ">=1.0"
+attrs = ">=17.4.0"
+colorama = "*"
+pluggy = ">=0.9"
+py = ">=1.5.0"
+setuptools = "*"
+six = ">=1.10.0"
+
+[package.dependencies.more-itertools]
+python = ">=2.8"
+version = ">=4.0.0"
+
+[[package]]
+category = "dev"
+description = "Pytest support for asyncio."
+name = "pytest-asyncio"
+optional = false
+python-versions = ">= 3.5"
+version = "0.10.0"
+
+[package.dependencies]
+pytest = ">=3.0.6"
+
+[[package]]
+category = "main"
+description = "Short id generator"
+name = "shortid"
+optional = false
+python-versions = "*"
+version = "0.1.2"
+
+[[package]]
+category = "dev"
+description = "Python 2 and 3 compatibility utilities"
+name = "six"
+optional = false
+python-versions = ">=2.6, !=3.0.*, !=3.1.*"
+version = "1.12.0"
+
+[[package]]
+category = "main"
+description = "Ultra fast JSON encoder and decoder for Python"
+name = "ujson"
+optional = false
+python-versions = "*"
+version = "1.35"
+
+[[package]]
+category = "main"
+description = "An implementation of the WebSocket Protocol (RFC 6455 & 7692)"
+name = "websockets"
+optional = false
+python-versions = ">=3.4"
+version = "7.0"
+
+[metadata]
+content-hash = "d0e097dda4b40f402786344be93dc16aad0c985d054d1ee1da801aa39e4054e0"
+python-versions = "^3.7"
+
+[metadata.hashes]
+asynctest = ["ade427a711d18016f35fb0c5d412f0ed63fb074a6084b67ff2dad48f50b0d6ca", "b29ee07019088f6f33fd7ab6826308bbd7ea8bc16ba2f0aa0f70551e70054935"]
+atomicwrites = ["03472c30eb2c5d1ba9227e4c2ca66ab8287fbfbbda3888aa93dc2e28fc6811b4", "75a9445bac02d8d058d5e1fe689654ba5a6556a1dfd8ce6ec55a0ed79866cfa6"]
+attrs = ["69c0dbf2ed392de1cb5ec704444b08a5ef81680a61cb899dc08127123af36a79", "f0b870f674851ecbfbbbd364d6b5cbdff9dcedbc7f3f5e18a6891057f21fe399"]
+backoff = ["c7187f15339e775aec926dc6e5e42f8a3ad7d3c2b9a6ecae7b535000f70cd838", "d340bb6f36d025c04214b8925112d8456970e5f28dda46e4f1133bf5c622cb0a"]
+colorama = ["05eed71e2e327246ad6b38c540c4a3117230b19679b875190486ddd2d721422d", "f8ac84de7840f5b9c4e3347b3c1eaa50f7e49c2b07596221daec5edaabbd7c48"]
+more-itertools = ["2112d2ca570bb7c3e53ea1a35cd5df42bb0fd10c45f0fb97178679c3c03d64c7", "c3e4748ba1aad8dba30a4886b0b1a2004f9a863837b8654e7059eebf727afa5a"]
+pluggy = ["19ecf9ce9db2fce065a7a0586e07cfb4ac8614fe96edf628a264b1c70116cf8f", "84d306a647cc805219916e62aab89caa97a33a1dd8c342e87a37f91073cd4746"]
+py = ["64f65755aee5b381cea27766a3a147c3f15b9b6b9ac88676de66ba2ae36793fa", "dc639b046a6e2cff5bbe40194ad65936d6ba360b52b3c3fe1d08a82dd50b5e53"]
+pytest = ["3773f4c235918987d51daf1db66d51c99fac654c81d6f2f709a046ab446d5e5d", "b7802283b70ca24d7119b32915efa7c409982f59913c1a6c0640aacf118b95f5"]
+pytest-asyncio = ["9fac5100fd716cbecf6ef89233e8590a4ad61d729d1732e0a96b84182df1daaf", "d734718e25cfc32d2bf78d346e99d33724deeba774cc4afdf491530c6184b63b"]
+shortid = ["adaa0c51269d9b5b635eedc408672b08697d404099370ea0857d108a48eef6ac"]
+six = ["3350809f0555b11f552448330d0b52d5f24c91a322ea4a15ef22629740f3761c", "d16a0141ec1a18405cd4ce8b4613101da75da0e9a7aec5bdd4fa804d0e0eba73"]
+ujson = ["f66073e5506e91d204ab0c614a148d5aa938bdbf104751be66f8ad7a222f5f86"]
+websockets = ["04b42a1b57096ffa5627d6a78ea1ff7fad3bc2c0331ffc17bc32a4024da7fea0", "08e3c3e0535befa4f0c4443824496c03ecc25062debbcf895874f8a0b4c97c9f", "10d89d4326045bf5e15e83e9867c85d686b612822e4d8f149cf4840aab5f46e0", "232fac8a1978fc1dead4b1c2fa27c7756750fb393eb4ac52f6bc87ba7242b2fa", "4bf4c8097440eff22bc78ec76fe2a865a6e658b6977a504679aaf08f02c121da", "51642ea3a00772d1e48fb0c492f0d3ae3b6474f34d20eca005a83f8c9c06c561", "55d86102282a636e195dad68aaaf85b81d0bef449d7e2ef2ff79ac450bb25d53", "564d2675682bd497b59907d2205031acbf7d3fadf8c763b689b9ede20300b215", "5d13bf5197a92149dc0badcc2b699267ff65a867029f465accfca8abab95f412", "5eda665f6789edb9b57b57a159b9c55482cbe5b046d7db458948370554b16439", "5edb2524d4032be4564c65dc4f9d01e79fe8fad5f966e5b552f4e5164fef0885", "79691794288bc51e2a3b8de2bc0272ca8355d0b8503077ea57c0716e840ebaef", "7fcc8681e9981b9b511cdee7c580d5b005f3bb86b65bde2188e04a29f1d63317", "8e447e05ec88b1b408a4c9cde85aa6f4b04f06aa874b9f0b8e8319faf51b1fee", "90ea6b3e7787620bb295a4ae050d2811c807d65b1486749414f78cfd6fb61489", "9e13239952694b8b831088431d15f771beace10edfcf9ef230cefea14f18508f", "d40f081187f7b54d7a99d8a5c782eaa4edc335a057aa54c85059272ed826dc09", "e1df1a58ed2468c7b7ce9a2f9752a32ad08eac2bcd56318625c3647c2cd2da6f", "e98d0cec437097f09c7834a11c69d79fe6241729b23f656cfc227e93294fc242", "f8d59627702d2ff27cb495ca1abdea8bd8d581de425c56e93bff6517134e0a9b", "fc30cdf2e949a2225b012a7911d1d031df3d23e99b7eda7dfc982dc4a860dae9"]

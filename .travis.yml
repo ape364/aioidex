@@ -1,0 +1,21 @@
+language: python
+python: 3.7
+dist: xenial
+sudo: true
+
+cache:
+  pip: true
+  directories:
+    - "$HOME/.cache/pypoetry"
+
+install:
+  - pip install pip -U
+  - python get-poetry.py --preview -y
+  - source $HOME/.poetry/env
+  - poetry install -v
+
+script: pytest -q aioidex/tests/
+
+after_success:
+  - poetry run coverage run --source=aioidex -m pytest
+  - coveralls
