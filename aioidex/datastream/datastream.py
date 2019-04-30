@@ -9,9 +9,9 @@ import websockets
 from shortid import ShortId
 from websockets.client import WebSocketClientProtocol
 
+from aioidex.datastream.sub_manager import SubscriptionManager
 from aioidex.exceptions import IdexHandshakeException, IdexAuthenticationFailure, IdexResponseSidError, \
     IdexDataStreamError, IdexInvalidVersion, IdexHandshakeTimeout
-from aioidex.sub_manager import SubscriptionManager
 
 
 class IdexDatastream:

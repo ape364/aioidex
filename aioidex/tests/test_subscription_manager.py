@@ -3,8 +3,8 @@ from logging import Logger
 import pytest
 from asynctest import Mock, patch, CoroutineMock
 
-from aioidex.datastream import IdexDatastream
-from aioidex.sub_manager import SubscriptionManager
+from aioidex import IdexDatastream
+from aioidex.datastream.sub_manager import SubscriptionManager
 from aioidex.types.events import MarketEvents
 from aioidex.types.subscriptions import Category, Subscription, Action
 
@@ -20,7 +20,7 @@ async def test_init():
     datastream = Mock()
     return_sub_responses = False
 
-    with patch('aioidex.sub_manager.SubscriptionManager._init_subscriptions') as mock:
+    with patch('aioidex.datastream.sub_manager.SubscriptionManager._init_subscriptions') as mock:
         sm = SubscriptionManager(datastream, return_sub_responses)
         mock.assert_called_once()
         assert sm._ds is datastream

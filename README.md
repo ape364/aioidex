@@ -13,7 +13,7 @@
 
 ### REST API 
 
-Does not support [HTTP API](https://docs.idex.market/#tag/HTTP-API-Introduction) yet.
+Supports only [public read-only endpoints](https://docs.idex.market/#group/HTTP-API) at this moment.
 
 ### Datastream Realtime API
 
@@ -27,7 +27,10 @@ pip install -U aioidex
 
 ## Usage
 
+### Datastream
+
 ```python
+
 import asyncio
 
 from aioidex import IdexDatastream
@@ -57,6 +60,31 @@ async def main():
     # or simply start to listen, connection will be created automatically
     async for msg in ds.listen():
         print(msg)
+
+
+if __name__ == '__main__':
+    asyncio.run(main())
+```
+
+### HTTP
+```python
+
+import asyncio
+
+from aioidex import Client
+
+
+async def main():
+    c = Client()
+
+    try:
+        result = await c.public.ticker()
+    except Exception as e:
+        print(f'Error ({type(e).__name__}): {e}')
+    else:
+        print(result)
+    finally:
+        await c.close()
 
 
 if __name__ == '__main__':

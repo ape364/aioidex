@@ -6,9 +6,9 @@ import websockets
 from asynctest import CoroutineMock, Mock, MagicMock, patch
 from shortid import ShortId
 
-from aioidex.datastream import IdexDatastream
+from aioidex import IdexDatastream
 from aioidex.exceptions import IdexDataStreamError, IdexResponseSidError, IdexHandshakeException
-from aioidex.sub_manager import SubscriptionManager
+from aioidex.datastream.sub_manager import SubscriptionManager
 
 
 @pytest.fixture()
