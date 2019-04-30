@@ -12,6 +12,7 @@ websockets = "^7.0"
 shortid = "^0.1.2"
 backoff = "^1.8"
 ujson = "^1.35"
+aiohttp = "^3.5"
 
 [tool.poetry.dev-dependencies]
 pytest = "^4.4"
