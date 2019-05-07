@@ -33,9 +33,7 @@ pip install -U aioidex
 
 import asyncio
 
-from aioidex import IdexDatastream
-from aioidex.types.events import MarketEvents, ChainEvents
-from aioidex.types.subscriptions import MarketSubscription, ChainSubscription
+from aioidex import IdexDatastream, MarketEvents, MarketSubscription, ChainSubscription, ChainEvents
 
 
 def get_subs():
