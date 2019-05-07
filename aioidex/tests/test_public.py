@@ -60,6 +60,10 @@ async def test_open_orders(p: Public):
         await p.open_orders()
     assert str(excinfo.value) == 'Either market or address is required.'
 
+    with pytest.raises(ValueError) as excinfo:
+        await p.open_orders('ETH_AURA', count=102)
+    assert str(excinfo.value) == 'Count must be in the interval [ 1 .. 100 ]'
+
     p._post = CoroutineMock()
     await p.open_orders(market='ETH_AURA')
     p._post.assert_awaited_once_with(

@@ -65,8 +65,8 @@ class Public(BaseModule):
         if not market and not address:
             raise ValueError('Either market or address is required.')
 
-        # if count is not None and count not in range(1, 101):
-        #     raise ValueError('Count must be in the interval [ 1 .. 100 ]')
+        if count is not None and count not in range(1, 101):
+            raise ValueError('Count must be in the interval [ 1 .. 100 ]')
 
         return await self._post(
             'returnOpenOrders',
