@@ -55,7 +55,7 @@ class Network:
         try:
             response_json = await response.json()
         except ContentTypeError:
-            raise IdexClientContentTypeError(f'Invalid response: {await response.text()!r}')
+            raise IdexClientContentTypeError(response.status, await response.text())
         else:
             return self._raise_if_error(response_json)
 
