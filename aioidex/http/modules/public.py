@@ -70,7 +70,7 @@ class Public(BaseModule):
 
         return await self._post(
             'returnOpenOrders',
-            {'market:': market, 'address': address, 'count': count, 'cursor': cursor}
+            {'market': market, 'address': address, 'count': count, 'cursor': cursor}
         )
 
     async def order_book(self, market: str, count: int = None) -> Dict:
@@ -81,21 +81,21 @@ class Public(BaseModule):
         if count is not None and count not in range(1, 101):
             raise ValueError('Count must be in the interval [ 1 .. 100 ]')
 
-        return await self._post('returnOrderBook', {'market:': market, 'count': count})
+        return await self._post('returnOrderBook', {'market': market, 'count': count})
 
     async def order_status(self, order_hash: str) -> Dict:
         """Returns a single order.
 
         https://docs.idex.market/#operation/returnOrderStatus
         """
-        return await self._post('returnOrderStatus', {'orderHash:': order_hash})
+        return await self._post('returnOrderStatus', {'orderHash': order_hash})
 
     async def order_trades(self, order_hash: str) -> List[Dict]:
         """Returns all trades involving a given order hash.
 
         https://docs.idex.market/#operation/returnOrderTrades
         """
-        return await self._post('returnOrderTrades', {'orderHash:': order_hash})
+        return await self._post('returnOrderTrades', {'orderHash': order_hash})
 
     async def trade_history(
             self,
@@ -123,7 +123,7 @@ class Public(BaseModule):
         return await self._post(
             'returnTradeHistory',
             {
-                'market:': market,
+                'market': market,
                 'address': address,
                 'start': start,
                 'end': end,
