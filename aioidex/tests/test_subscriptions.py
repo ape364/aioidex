@@ -40,8 +40,8 @@ def test_sub_init():
 
 def test_normalize(sub: Subscription):
     assert isinstance(sub._normalize([]), tuple)
-    assert sub._normalize(['b', 'c', 'a']) == ('A', 'B', 'C')
-    assert sub._normalize(['b', MarketEvents.TRADES, 'a']) == ('A', 'B', MarketEvents.TRADES.value)
+    assert sub._normalize(['b', 'c', 'a']) == ('a', 'b', 'c')
+    assert sub._normalize(['b', MarketEvents.TRADES, 'a']) == ('a', 'b', MarketEvents.TRADES.value)
     assert sub._normalize(
         [MarketEvents.ORDERS, MarketEvents.CANCELS]
     ) == (MarketEvents.CANCELS.value, MarketEvents.ORDERS.value)
@@ -71,7 +71,7 @@ def test_account_subscription():
 
     assert s.category == Category.ACCOUNT
     assert s.events == ('account_trades',)
-    assert s.topics == ('0XCDCFC0F66C522FD086A1B725EA3C0EEB9F9E8814',)
+    assert s.topics == ('0xcdcfc0f66c522fd086a1b725ea3c0eeb9f9e8814',)
 
 
 def test_market_subscription():
@@ -88,7 +88,7 @@ def test_market_subscription():
 
     assert s.category == Category.MARKET
     assert s.events == ('market_cancels',)
-    assert s.topics == ('ETH_AURA',)
+    assert s.topics == ('eth_aura',)
 
 
 def test_chain_subscription():
