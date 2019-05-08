@@ -55,7 +55,7 @@ class Subscription:
             if isinstance(i, Enum):
                 item = i.value
             elif isinstance(i, str):
-                item = i.strip().upper()
+                item = i.strip()
             else:
                 continue
 
