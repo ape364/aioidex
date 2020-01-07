@@ -39,6 +39,17 @@ class IdexDatastream:
 
         self.sub_manager = SubscriptionManager(self, return_sub_responses)
 
+    async def _ping_ws_task(self, delay=30):
+        while True:
+            await asyncio.sleep(delay)
+            try:
+                await self._ws.ping()
+            except Exception as e:
+                self._logger.error('Ping task exception (%s): %s', type(e).__name__, e)
+                self._logger.warning('Reconnecting...')
+                await self.init()
+                await self.sub_manager.resubscribe()
+
     async def _check_connection(self):
         if not self._ws:
             self._logger.info('Connection not created yet, creating...')
@@ -78,8 +89,13 @@ class IdexDatastream:
 
     async def listen(self):
         await self._check_connection()
+        asyncio.create_task(self._ping_ws_task())
         while True:
             try:
+                # 1000 and 1001 exit codes reconnect support
+                if self._ws.closed:
+                    raise websockets.ConnectionClosed(self._ws.close_code, 'Connection is closed')
+
                 async for msg in self._ws:
                     self._logger.debug('New message: %s', msg)
                     message = self._process_message(msg)

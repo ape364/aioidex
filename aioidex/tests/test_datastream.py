@@ -141,6 +141,7 @@ async def test_listen(ds: IdexDatastream):
 
     ds._check_connection = CoroutineMock()
     ds._ws = MagicMock()
+    ds._ws.closed = False
     ds._ws.__aiter__.return_value = (msg_data,)
 
     processed_message = {'a': 'b'}
@@ -166,6 +167,7 @@ async def test_listen_reconnect(ds: IdexDatastream):
 
     ds._check_connection = CoroutineMock()
     ds._ws = MagicMock()
+    ds._ws.closed = False
     ds._ws.__aiter__.side_effect = exc
 
     ds.init = CoroutineMock()
@@ -194,6 +196,7 @@ async def test_listen_raise(ds: IdexDatastream):
 
     ds._check_connection = CoroutineMock()
     ds._ws = MagicMock()
+    ds._ws.closed = False
     ds._ws.__aiter__.side_effect = exc
 
     with pytest.raises(UnhandledExc):
